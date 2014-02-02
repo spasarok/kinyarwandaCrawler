@@ -1,0 +1,107 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+
+<!-- Put site-specific property overrides in this file. -->
+
+<configuration>
+
+<property>
+  <name>searcher.dir</name>
+  <value>./crawl</value>
+  <description>
+  Path to root of crawl.  This directory is searched (in
+  order) for either the file search-servers.txt, containing a list of
+  distributed search servers, or the directory "index" containing
+  merged indexes, or the directory "segments" containing segment
+  indexes.
+  </description>
+</property>
+
+<property>
+    <name>http.agent.name</name>
+    <value>DiscoverEd</value>
+</property>
+
+<property>
+  <name>http.agent.description</name>
+  <value>OER search crawler</value>
+  <description>Further description of our bot- this text is used in
+  the User-Agent header.  It appears in parenthesis after the agent name.
+  </description>
+</property>
+
+<property>
+  <name>http.agent.url</name>
+  <value>http://wiki.creativecommons.org/DiscoverEd</value>
+  <description>A URL to advertise in the User-Agent header.  This will 
+   appear in parenthesis after the agent name. Custom dictates that this
+   should be a URL of a page explaining the purpose and behavior of this
+   crawler.
+  </description>
+</property>
+
+<property>
+  <name>http.agent.email</name>
+  <value>webmaster@creativecommons.org</value>
+  <description>An email address to advertise in the HTTP 'From' request
+   header and User-Agent header. A good practice is to mangle this
+   address (e.g. 'info at example dot com') to avoid spamming.
+  </description>
+</property>
+
+<property>
+  <name>http.robots.agents</name>
+  <value>DiscoverEd, *</value>
+  <description>The agent strings we'll look for in robots.txt files,
+  comma-separated, in decreasing order of precedence. You should
+  put the value of http.agent.name as the first agent name, and keep the
+  default * at the end of the list. E.g.: BlurflDev,Blurfl,*
+  </description>
+</property>
+
+<property>
+  <name>plugin.includes</name>
+  <value>protocol-http|urlfilter-regex|parse-(html|tika)|index-(basic|anchor)|indexer-solr|scoring-opic|urlnormalizer-(pass|regex|basic)</value>
+  <description>Regular expression naming plugin directory names to
+  include.  Any plugin not matching this expression is excluded.
+  In any case you need at least include the nutch-extensionpoints plugin. By
+  default Nutch includes crawling just HTML and plain text via HTTP,
+  and basic indexing and search plugins. In order to use HTTPS please enable 
+  protocol-httpclient, but be aware of possible intermittent problems with the 
+  underlying commons-httpclient library.
+  </description>
+</property>
+
+<!--
+  The configuration file conf/nutch-site.xml is a good place to write some
+  predicate, prefix pairs, like this:
+
+     <property>
+         <predicate>http://purl.org/dc/terms/educationLevel</predicate>
+         <name>query.basic.edlevel.boost</name>
+         <value>1.0</value>
+     </property>
+
+     That will allow users to type this into the search query box:
+     edlevel:highschool and get results.
+
+     The more technical side of the story... This property section does the following:
+
+     At indexing time, DiscoverEd will copy the data about education levels
+     from the Jena store and paste this data into Lucene. (Specifically, it
+     copies any data whose predicate is
+     http://purl.org/dc/terms/educationLevel.) Nutch can then find this data at
+     querying time.  Nutch will also permit users to search Lucene using a
+     field named "edlevel".
+
+     The number in <value> is the "boost", i.e., the weight this term carries
+     when Nutch ranks search results. Choose 1.0 to mean "no adjustment".
+     
+     For more about what Nutch is doing, see
+     <http://wiki.apache.org/nutch/HowToMakeCustomSearch>. Notice that
+     the tags <property>, <name>, and <value> are part of the Nutch specification,
+     while the <predicate> tag is part of the Discovered specification.
+
+     -->
+
+</configuration>

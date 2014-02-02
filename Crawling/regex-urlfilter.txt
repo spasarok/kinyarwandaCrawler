@@ -1,0 +1,83 @@
+# Kim Spasaro
+# August 15, 2013
+# URLs for creating a Kinyarwanda corpus
+
+# skip garbage (defaults)
+-^(file|ftp|mailto):
+-[?*!@=]
+-.*(/[^/]+)/[^/]+\1/[^/]+\1/
+-\.(gif|GIF|jpg|JPG|png|PNG|ico|ICO|css|CSS|sit|SIT|eps|EPS|wmf|WMF|zip|ZIP|ppt|PPT|mpg|MPG|xls|XLS|gz|GZ|rpm|RPM|tgz|TGZ|mov|MOV|exe|EXE|jpeg|JPEG|bmp|BMP|js|JS)$
+
+#
+# for crawling monolingual data
+#
++^http://([a-z0-9]*\.)*amakuruki.com/
++^http://([a-z0-9]*\.)*bahoneza.com/
++^http://([a-z0-9]*\.)*thebasic12.com/
++^http://([a-z0-9]*\.)*rwanda.thebeehive.org/
++^http://([a-z0-9]*\.)*csr.gov.rw/rw/
++^http://([a-z0-9]*\.)*epresserwanda.blogspot.com/
++^http://([a-z0-9]*\.)*theexposer.net/kiny/
++^http://([a-z0-9]*\.)*fdu-rwanda.com/RW/
+-^http://([a-z0-9]*\.)*fdu-rwanda.com$
++^http://([a-z0-9]*\.)*hillywoodstar.com/
++^http://([a-z0-9]*\.)*ibishya.biz/
++^http://([a-z0-9]*\.)*igihe.com/
++^http://([a-z0-9]*\.)*imbere.com/
++^http://([a-z0-9]*\.)*imirasire.com/
++^http://([a-z0-9]*\.)*inyarwanda.com/
++^http://([a-z0-9]*\.)*ireme.net/
++^http://([a-z0-9]*\.)*isheja.com/
++^http://([a-z0-9]*\.)*itezimbere.com/
++^http://([a-z0-9]*\.)*iwacu.rw/kinyarwanda/
++^http://([a-z0-9]*\.)*izuba-rirashe.com/
++^http://([a-z0-9]*\.)*jw.org/rw/
++^http://([a-z0-9]*\.)*kgltimes.com/
++^http://([a-z0-9]*\.)*kigalitoday.com/
++^http://([a-z0-9]*\.)*kin.viawod.com/
++^http://([a-z0-9]*\.)*police.gov.rw/rw/
++^http://([a-z0-9]*\.)*radiyoyacuvoa.com/
++^http://www.rdi-rwandarwiza.org/
++^http://www.rdi-rwandarwiza.org/kinyarwanda/
+-^http://www.rdi-rwandarwiza.org/english/
+-^http://www.rdi-rwandarwiza.org/francais/
++^http://([a-z0-9]*\.)*ruhagoyacu.com/
++^http://([a-z0-9]*\.)*rwandinfo.com/kinya/
++^http://([a-z0-9]*\.)*therwandan.com/ki/
++^http://([a-z0-9]*\.)*ubugorozi.org/
++^http://([a-z0-9]*\.)*ubuzimabwacu.com/
++^http://([a-z0-9]*\.)*umuhanuzi.blogspot.com/
++^http://([a-z0-9]*\.)*umuhanzi.com/
++^http://([a-z0-9]*\.)*umuryango.com/
++^http://([a-z0-9]*\.)*umuseke.rw/
++^http://([a-z0-9]*\.)*umuvugizi.com/
++^http://([a-z0-9]*\.)*rw.wikipedia.org/wiki/
++^http://([a-z0-9]*\.)*wikirwanda.org/
++^http://([a-z0-9]*\.)*zahabutimes.com/
+
+#
+# for crawling parameterized governent of Rwanda data
+#
+## +^http://([a-z0-9]*\.)*gov.rw/
+## +^http://([a-z0-9]*\.)*kamonyi.gov.rw/
+## +^http://([a-z0-9]*\.)*karongi.gov.rw/
+## +^http://([a-z0-9]*\.)*kicukiro.gov.rw/
+## +^http://([a-z0-9]*\.)*minispoc.gov.rw/
+## +^http://([a-z0-9]*\.)*musanze.gov.rw/
+## +^http://([a-z0-9]*\.)*ngoma.gov.rw
+## +^http://([a-z0-9]*\.)*ngororero.gov.rw/
+## +^http://([a-z0-9]*\.)*umushyikirano.gov.rw/
+## +^http://([a-z0-9]*\.)*umushyikirano.gov.rw/
+
+#
+# for crawling bilingual non-parallel data (will have to be filtered post-crawl)
+#
+## +^http://([a-z0-9]*\.)*nec.gov.rw/news/
+## +^http://([a-z0-9]*\.)*newsofrwanda.com/
+## +^http://([a-z0-9]*\.)*parliament.gov.rw/parliament/default.aspx
+## +^http://([a-z0-9]*\.)*rwandaarts.com/
+## +^http://([a-z0-9]*\.)*sightsofrwanda.com/
+## +^http://([a-z0-9]*\.)*umuhinzi.com/
+## +^http://([a-z0-9]*\.)*umukino.com/
+## -^http://([a-z0-9]*\.)*umukino.com/category/english/
+
